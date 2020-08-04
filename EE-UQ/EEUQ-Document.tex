@@ -1,14 +1,24 @@
 \documentclass{simcenterdocumentation}
 \usepackage[backend=biber]{biblatex}
-\usepackage{subfig}
-%\usepackage{subcaption}
+%\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{adjustbox}
 \usepackage{cleveref}
 \usepackage{longtable}
 
+\usepackage{hhline}
+\usepackage{color, colortbl}
+\definecolor{lightgray}{HTML}{E5E4E2}
+
 %% SETTING ENVIRONMENT FOR PYTHON CODE SNIPPETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage[utf8]{inputenc}
+
+\graphicspath{{../Common/}{.}} %Setting the graphicspath
+\makeatletter % Search additional directories for inputs
+\def\input@path{{../Common/}{.}}
+%or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -22,7 +32,7 @@
 %% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 %% \dsp
 
-\bibliography{references}
+\bibliography{../Common/references}
 
 \begin{document}
 
@@ -30,11 +40,11 @@
 % Software title followed by optional second line
 \title{EE-UQ\\ \Large The Earthquake Engineering with Uncertainty Quantification (EE-UQ) Application}
 % Use superscripts to indicate author affiliations
-\author{Frank McKenna, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
+\author{Frank McKenna, Wael Elhaddad, Chaofeng Wang, \\Michael Gardner, and Adam Zsarn\'oczay}
 %\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{EE-UQ}
-\softwareversion{1.1}
+\softwareversion{2.0}
 \softwarepage{https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,9 +73,7 @@
 
 \chapter{About}
 \label{chap:about}
-\input{about/about.tex}
-
-
+\input{about/about_EE.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
@@ -95,6 +103,8 @@
 \chapter{Requirements}
 \label{chap:requirements}
 \input{requirements/requirements.tex}
+
+ \input{requirements/EEUQ_Requirements.tex}
 
 \chapter{Troubleshooting}
 \label{chap:troubleshooting}

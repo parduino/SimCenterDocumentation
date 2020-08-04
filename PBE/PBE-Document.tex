@@ -1,14 +1,22 @@
 \documentclass{simcenterdocumentation}
+
+
+
 \usepackage[backend=biber]{biblatex}
-\usepackage{subfig}
+%\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{multirow}
-\usepackage{adjustbox} % to adjust table width
-\usepackage{graphicx} %Loading the package
-\usepackage{longtable}
+\usepackage{adjustbox}
 \usepackage{cleveref}
-\graphicspath{{../EE-UQ/}{.}} %Setting the graphicspath
+\usepackage{longtable}
+
+\usepackage{hhline}
+\usepackage{color, colortbl}
+\definecolor{lightgray}{HTML}{E5E4E2}
+
+\graphicspath{{../Common/}{.}} %Setting the graphicspath
 \makeatletter % Search additional directories for inputs
-\def\input@path{{../EE-UQ/}{.}}
+\def\input@path{{../Common/}{.}}
 %or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
 \makeatother
 
@@ -25,7 +33,7 @@
 %% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 %% \dsp
 
-\bibliography{../EE-UQ/references}
+\bibliography{../Common/references}
 
 \begin{document}
 % Declarations for Front Matter
@@ -35,7 +43,7 @@
 \author{Frank McKenna, Adam Zsarn\'oczay, \\ Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{PBE}
-\softwareversion{1.1}
+\softwareversion{2.0}
 \softwarepage{https://simcenter.designsafe-ci.org/research-tools/pbe-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,11 +106,13 @@
 \label{chap:requirements}
 \input{requirements/requirements.tex}
 
+ \input{requirements/PBE_Requirements.tex}
+
 \chapter{Troubleshooting}
 \label{chap:troubleshooting}
 \input{troubleshooting/troubleshooting.tex}
 
-\nocite{*}
+%\nocite{*}
 
 % \appendix
 % \chapter{More Monticello Candidates}
